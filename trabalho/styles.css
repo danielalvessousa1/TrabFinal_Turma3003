@@ -1,0 +1,111 @@
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255); /* Fundo branco */
+    color: #000000; /* Texto preto */
+    margin: 0px;
+    padding: 0px;
+}
+#logo {
+    position: absolute;
+    transform: scale(0.1);
+    top: -900px; /* Ajuste essa posição conforme necessário */
+    left:-850px; /* Ajuste essa posição conforme necessário */
+}
+
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+header {
+    background-color: #ffff01; /* Amarelo */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilos para o menu de navegação */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 25px; /* Espaçamento entre os itens do menu */
+}
+
+a {
+    text-decoration: none;
+    color: #000000; /* Cor do texto do menu */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0127ff; /* Cor do texto do menu quando hover (passar o mouse) */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff; /* Fundo branco */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #ffff01; /* Amarelo */
+    padding: 10px;
+}
+
+.carousel {  /* Carrosel de fotos */
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner { /*transição */
+    display: flex;
+    transition: transform 0.5s;
+}
+
+img { /*escala de imagem */
+    width: 100%;
+    height: auto;
+}
+
+button { /* configuração do botão */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.prev-btn { /* posição do botão "voltar" */
+    left: 0;
+}
+
+.next-btn { /* posição do botão "seguir" */
+    right: 0;
+}
+
+.texto1 h2{
+    text-align: center;
+    font-size: 32px;
+    position: absolute;
+    top: 10%;
+    padding: 10px;
+    left: 40%;
+}
+

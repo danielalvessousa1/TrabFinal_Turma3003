@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Casa Reviver</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para seu arquivo CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        function validarForm() {
+                let nome = document.forms["formContato"]["nome"].value; 
+                let telefone = document.getElementById("telefone").value;
+                let email = document.getElementById("email").value;
+
+                if (nome == "") {
+                    alert("Preencha o nome!!");
+                }
+                else if (telefone == "") {
+                    alert("Preencha o telefone!!");
+                }
+                else if (email == "") {
+                    alert("Preencha o email!!");
+                }
+                else {
+                    let mensagem = "Seus dados foram enviados " + nome;
+                    alert(mensagem);
+                }
+            }
+    
+        $(function() {
+            
+
+            $('#Enviar').click(function() {
+                var nome = $('#nome').val();
+                var telefone = $('#telefone').val();
+                var email = $('#email').val();
+                $.post(
+                    'enviar_contato.php', 
+                    {
+                        action: "Enviar", 
+                        nome: nome, 
+                        telefone: telefone, 
+                        email: email
+                        
+                    },
+                    function(res) {
+                        
+                            $('#resultado_enviar').html(res);
+                    }
+                    
+                )
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Entre em Contato</h1>
+        <img src="imagens/casa reviver preto png.png" alt="Logotipo" id="logo">  <!-- Imagens Logotipo -->
+        <nav>
+            <ul><!-- MENU DE NAVEGAÇÂO -->
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="sobre_nos.html">Sobre Nós</a></li>
+                <li><a href="doacao.html">Doação</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulário de Contato</h2> <!-- Formulario de contato -->
+            <form name="formContato" action="contato.php" method="POST">
+                <label for="nome">Nome:</label> <!-- entrada de nome -->
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="telefone">Telefone:</label> <!-- entrada de telefone -->
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <label for="email">Email:</label> <!-- entrada de email -->
+                <input type="email" id="email" name="email" required>
+
+                
+                <input type="submit" value="Enviar" id="Enviar" onclick="validarForm()"> <!-- botao de envio -->
+                <div id="resultado_Enviar"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Casa Reviver. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
